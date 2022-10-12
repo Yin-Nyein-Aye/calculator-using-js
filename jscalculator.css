@@ -1,0 +1,73 @@
+*{
+	box-sizing: border-box;
+}
+
+body{
+	height: 100vh;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	margin:0;
+	
+	background:linear-gradient(45deg,		
+		rgba(224,233,124,1.00),		
+		rgba(40,116,124,1.00));
+
+}
+
+.container{
+	width: 300px;
+	background-color: transparent;
+	border-radius: 5px;
+	box-shadow:0 0 10px #000;
+}
+
+.calculateform{
+	padding: 5px 5px;
+}
+
+input.numinput{
+	width: 100%;
+	height: 60px;
+	padding: 10px 20px;
+	margin-bottom: 20px;
+	border-radius: 10%;
+	border: none;
+	text-align: right;
+	font-size: 32px;
+}
+
+
+input:focus{
+	outline: 0;
+}
+.number button{
+	width: 55px;
+	height: 50px;	
+	border-radius: 25%;
+	border: 0;
+	font-size: 24px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	font-family: 'Lobster', cursive;
+}
+
+.number button:active{
+	transform: scale(0.93);
+	background-color: #788784;
+}
+
+button.sign{
+	background-color: #222;
+	color:#fff;
+
+}
+
+.stuid{
+	font-family: 'Lobster', cursive;
+	font-size: 12px;
+	text-align: right;
+	
+}

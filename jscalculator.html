@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>JS Calculator</title>
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />	
+			<link href="./jscalculator.css" rel="stylesheet" type="text/css" />
+		</head>
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Yomogi&display=swap');
+		</style>
+		<body>
+			<div class="container">
+				<div class="calculateform">
+					<form id="calform" action="" method="" class="">
+						<input type="text" name="resutlt" id="screen" class="numinput" autocomplete="off" />
+						<div class="number">
+							<div class="firstrow">				
+								<button name="plus" id="plusbtn" class="sign" >+</button>
+								<button name="minus" id="minusbtn" class="sign" >-</button>
+								<button name="multiply" id="mulbtn" class="sign" >*</button>
+								<button name="division" id="divisionbtn" class="sign">/</button>
+							</div>
+							<div class="secondrow">	
+								<button name="seven" id="sevenbtn" class="">7</button>	
+								<button name="eight" id="eightbtn" class="">8</button>
+								<button name="nine" id="ninebtn" class="">9</button>
+								<button name="modulus" id="modulusbtn" class="sign">%</button>								
+							</div>
+							<div class="thirdrow">
+								<button name="four" id="fourbtn" class="">4</button>
+								<button name="five" id="fivebtn" class="">5</button>
+								<button name="six" id="sixbtn" class="">6</button>								
+								<button name="remove" id="acbtn" class="sign">AC</button>								
+							</div>
+							<div class="fourthrow">							
+								<button name="one" id="onebtn" class="">1</button>
+								<button name="two" id="twobtn" class="">2</button>
+								<button name="three" id="threebtn" class="">3</button>						
+								<button name="back" id="backbtn" class="sign"><i class="fas fa-backspace size"></i>
+								</button>								
+							</div>
+							<div class="fifthrow">
+								<button name="zero" id="zerobtn" class="">0</button>
+								<button name="dblzero" id="dblzerobtn" class="">00</button>
+								<button name="dot" id="dotbtn" class="">.</button>
+								<button name="equal" id="equalbtn" class="sign" >=</button>								
+							</div>
+						</div>
+					</form>
+					<div class="stuid">
+						<span>WDF3024</span>
+					</div>			
+					<input type="hidden" name="rectwo" id="recentfirstvalue" class="" placeholder="firstnum" />
+					<input type="hidden" name="recone" id="recentsign" class="" placeholder="sign" />
+					<input type="hidden" name="recthree" id="recentsecondvalue" class="" placeholder="secondnum" />
+				</div>
+			</div>	
+
+			<script type="text/javascript">
+				const getnumone = document.getElementById('onebtn');
+				const getnumtwo = document.getElementById('twobtn');
+				const getnumthree = document.getElementById('threebtn');
+				const getnumfour = document.getElementById('fourbtn');
+				const getnumfive = document.getElementById('fivebtn');
+				const getnumsix = document.getElementById('sixbtn');
+				const getnumseven = document.getElementById('sevenbtn');
+				const getnumeight = document.getElementById('eightbtn');
+				const getnumnine = document.getElementById('ninebtn');
+				const getnumzero = document.getElementById('zerobtn');
+				const getnumdblzero = document.getElementById('dblzerobtn');
+				const dot = document.getElementById('dotbtn');
+
+				getnumone.addEventListener('click',getnum);		
+				getnumtwo.addEventListener('click',getnum);		
+				getnumthree.addEventListener('click',getnum);		
+				getnumfour.addEventListener('click',getnum);		
+				getnumfive.addEventListener('click',getnum);
+				getnumsix.addEventListener('click',getnum);		
+				getnumseven.addEventListener('click',getnum);		
+				getnumeight.addEventListener('click',getnum);		
+				getnumnine.addEventListener('click',getnum);
+				getnumzero.addEventListener('click',getnum);		
+				getnumdblzero.addEventListener('click',getnum);
+				dot.addEventListener('click',getnum);
+
+				const textinput = document.getElementById('screen');
+				const recfirstnum = document.getElementById('recentfirstvalue');
+				const recsecondnum = document.getElementById('recentsecondvalue');
+				const recsign = document.getElementById('recentsign');	
+				
+				function getnum(e){
+					e.preventDefault();	
+					if(e.target.id === 'onebtn'){
+						textinput.value += 1;
+						if(recsign.value === ''){
+							recentfirstvalue.value = textinput.value;
+						}else{
+							recentsecondvalue.value += 1;
+						}
+					}
+					if(e.target.id === 'twobtn'){
+						textinput.value += 2;
+						if(recsign.value === ''){
+							recentfirstvalue.value = textinput.value;
+						}else{
+							recentsecondvalue.value += 2;
+						}
+					}
+					if(e.target.id === 'threebtn'){
+						textinput.value += 3;
+						if(recsign.value === ''){
+							recentfirstvalue.value = textinput.value;
+						}else{
+							recentsecondvalue.value += 3;
+						}
+					}
+					if(e.target.id === 'fourbtn'){
+						textinput.value += 4;
+						if(recsign.value === ''){
+							recentfirstvalue.value = textinput.value;
+						}else{
+							recentsecondvalue.value += 4;
+						}
+					}
+					if(e.target.id === 'fivebtn'){
+						textinput.value += 5;
+						if(recsign.value === ''){
+							recentfirstvalue.value = textinput.value;
+						}else{
+							recentsecondvalue.value += 5;
+						}
+					}
+					if(e.target.id === 'sixbtn'){
+						textinput.value += 6;
+						if(recsign.value === ''){
+							recentfirstvalue.value = textinput.value;
+						}else{
+							recentsecondvalue.value += 6;
+						}
+					}
+					if(e.target.id === 'sevenbtn'){
+						textinput.value += 7;
+						if(recsign.value === ''){
+							recentfirstvalue.value = textinput.value;
+						}else{
+							recentsecondvalue.value += 7;
+						}
+					}
+					if(e.target.id === 'eightbtn'){
+						textinput.value += 8;
+						if(recsign.value === ''){
+							recentfirstvalue.value = textinput.value;
+						}else{
+							recentsecondvalue.value += 8;
+						}
+					}
+					if(e.target.id === 'ninebtn'){
+						textinput.value += 9;
+						if(recsign.value === ''){
+							recentfirstvalue.value = textinput.value;
+						}else{
+							recentsecondvalue.value += 9;
+						}
+					}
+					if(e.target.id === 'zerobtn'){
+						textinput.value += 0;
+						if(recsign.value === ''){
+							recentfirstvalue.value = textinput.value;
+						}else{
+							recentsecondvalue.value += 0;
+						}
+					}	
+					if(e.target.id === 'dblzerobtn'){
+						textinput.value += 0;
+						textinput.value += 0;
+						if(recsign.value === ''){
+							recentfirstvalue.value = textinput.value;
+						}else{
+							recentsecondvalue.value += 0;
+							recentsecondvalue.value += 0;
+						}
+					}
+					if(e.target.id === 'dotbtn'){
+						textinput.value += '.';
+						if(recsign.value === ''){
+							recentfirstvalue.value = textinput.value;
+						}else{
+							recentsecondvalue.value += '.';
+						}
+					}		
+				}			
+				const plus = document.getElementById('plusbtn');
+				const minus = document.getElementById('minusbtn');
+				const multiply = document.getElementById('mulbtn');
+				const division = document.getElementById('divisionbtn');
+				const modulus = document.getElementById('modulusbtn');		
+				const equal = document.getElementById('equalbtn');
+				const ac = document.getElementById('acbtn');
+				const back = document.getElementById('backbtn');
+				
+				plus.addEventListener('click',mathsign);
+				minus.addEventListener('click',mathsign);
+				multiply.addEventListener('click',mathsign);
+				division.addEventListener('click',mathsign);
+				modulus.addEventListener('click',mathsign);		
+				equal.addEventListener('click',calculate);
+				ac.addEventListener('click',valuedelete);
+				back.addEventListener('click',backspace);
+
+				function mathsign(e){
+					e.preventDefault();						
+					switch(e.target.id){
+						case 'plusbtn':
+						textinput.value +=  '+';
+						recsign.value = '+';				
+						break;
+						case 'minusbtn':
+						textinput.value += '-';
+						recsign.value = '-';
+						break;
+						case 'mulbtn':
+						textinput.value += '*';
+						recsign.value = '*';
+						break;
+						case 'divisionbtn':
+						textinput.value += '/';
+						recsign.value = '/';
+						break;
+						case 'modulusbtn':
+						textinput.value += '%';
+						recsign.value = '%'
+						break;						
+					}
+				}	
+				function calculate(e){					
+					e.preventDefault();
+					const num1 = parseFloat(recentfirstvalue.value);
+					const num2 =  parseFloat(recentsecondvalue.value);
+					let realresult;
+					switch(recsign.value){
+						case '+':
+						realresult = num1 + num2;
+						textinput.value = realresult;
+
+						recentfirstvalue.value = realresult;
+						recsign.value = '';
+						recentsecondvalue.value = '';
+						break;
+
+						case '-':
+						realresult = num1 - num2;
+						textinput.value = realresult;
+
+						recentfirstvalue.value = realresult;
+						recsign.value = '';
+						recentsecondvalue.value = '';
+						break;
+
+						case '*':
+						realresult = num1 * num2;
+						textinput.value = realresult;
+
+						recentfirstvalue.value = realresult;
+						recsign.value = '';
+						recentsecondvalue.value = '';
+						break;
+
+						case '/':
+						realresult = num1 / num2;
+						textinput.value = realresult;
+
+						recentfirstvalue.value = realresult;
+						recsign.value = '';
+						recentsecondvalue.value = '';
+						break;
+
+						case '%':
+						realresult = num1 % num2;
+						textinput.value = realresult;
+
+						recentfirstvalue.value = realresult;
+						recsign.value = '';
+						recentsecondvalue.value = '';
+						break;
+					}			
+				}
+
+				function valuedelete(e){
+					e.preventDefault();
+					textinput.value = '';
+					recentfirstvalue.value = '';
+					recentsecondvalue.value = '';
+					recsign.value = '';
+				}
+
+				function backspace(e){
+					e.preventDefault();	 
+					if(recsign.value === ''){
+							recentfirstvalue.value = recentfirstvalue.value.slice(0 , -1);
+							textinput.value = recentfirstvalue.value;
+						}else{
+							textinput.value = textinput.value.slice(0 , -1);
+							recentsecondvalue.value = recentsecondvalue.value.slice(0, -1);
+						}					
+				}
+			</script>
+		</body>
+	</html>	
